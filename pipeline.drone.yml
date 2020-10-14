@@ -3,7 +3,7 @@ type: docker
 name: default
 
 steps:
-  - name: build-gradle
+  - name: build-gradlew
     image: androidsdk/android-29
     commands:
       - sdkmanager --update
