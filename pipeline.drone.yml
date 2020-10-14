@@ -8,7 +8,7 @@ steps:
     commands:
       - sdkmanager --update
       - echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis;x86_64"
-      - echo no |apt-get install qemu-kvm
+      - echo y |apt-get install qemu-kvm
       - kvm-ok
       - emulator -avd test -no-window
       - ./gradlew test
