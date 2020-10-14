@@ -3,17 +3,10 @@ type: docker
 name: default
 
 steps:
-  - name: sdkmanager
-    image: androidsdk/android-29
-    commands:
-      -sdkmanager --update
-  - name: emulator
-    image: androidsdk/android-29
-    commands:
-      - avdmanager create avd -n test -k "system-images;android-29;google_apis;x86_64"
-      - emulator -avd test -no-window
-
   - name: build-gradle
     image: androidsdk/android-29
     commands:
+      - sdkmanager --update
+      - avdmanager create avd -n test -k "system-images;android-29;google_apis;x86_64"
+      - emulator -avd test -no-window
       -./gradlew test
