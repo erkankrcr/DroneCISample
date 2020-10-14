@@ -7,11 +7,7 @@ steps:
     image: androidsdk/android-29
     commands:
       - sdkmanager --update
-      - echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis;x86_64"
-      - echo y |apt-get install qemu-kvm
-      - kvm-ok
-      - emulator -avd test -no-window
-      - ./gradlew test
+      - - ./gradlew test
 
   - name: build-android
     image: niltonvasques/android-sdk-and-emulator:0.1.5
