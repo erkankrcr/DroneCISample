@@ -8,14 +8,3 @@ steps:
     commands:
       - echo hello
       - echo world
-
-  - name: denemeSteps
-      image: alpine
-      commands:
-        - echo hello
-        - echo world
-  - name: denemeStepsss
-      image: alpine
-      commands:
-        - echo hello
-        - echo world
