@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: denemeSteps
-    image: alpine
+    image: gradle:jdk10
     commands:
-      - echo hello
-      - echo world
+      - gradle assemble
+      - gradle check
