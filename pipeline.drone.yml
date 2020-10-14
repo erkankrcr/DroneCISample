@@ -8,5 +8,6 @@ steps:
     commands:
       - sdkmanager --update
       - avdmanager create avd -n test -k "system-images;android-29;google_apis;x86_64"
+      - no
       - emulator -avd test -no-window
       - ./gradlew test
