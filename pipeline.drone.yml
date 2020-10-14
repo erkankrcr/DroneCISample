@@ -4,7 +4,6 @@ name: default
 
 steps:
   - name: denemeSteps
-    image: gradle:jdk10
+    image: androidsdk/android-29
     commands:
-      - gradle assemble
-      - gradle check
+      - /.gradlew
