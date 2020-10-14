@@ -3,8 +3,10 @@ type: docker
 name: default
 
 steps:
-  - name: build-gradlew-test
+  - name: build-gradlew
     image: androidsdk/android-29
     commands:
       - sdkmanager --update
+      - echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis;x86_64"
+      - emulator -avd test -no-window
       - ./gradlew test
