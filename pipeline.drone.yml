@@ -7,7 +7,7 @@ steps:
     image: androidsdk/android-29
     commands:
       - sdkmanager --update
-      - - ./gradlew test
+      - ./gradlew test
 
   - name: build-android
     image: niltonvasques/android-sdk-and-emulator:0.1.5
