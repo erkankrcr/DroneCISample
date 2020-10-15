@@ -4,18 +4,6 @@ name: default
 
 steps:
   - name: build-gradlew
-    image: androidsdk/android-29
+    image: deneme:v1
     commands:
-      - sdkmanager --update
       - ./gradlew test
-
-  - name: build-android
-    image: niltonvasques/android-sdk-and-emulator:0.1.5
-    commands:
-      - cp -a /drone/.gradle /root/ && rm -Rf /drone/.gradle
-      - start_emulator && wait_emulator
-      - ./gradlew check --daemon -PdisablePreDex --stacktrace
-      - ./gradlew assembleDebugAndroidTest --daemon -PdisablePreDex --stacktrace
-      - unlock_emulator
-      - ./gradlew cC --daemon -PdisablePreDex --stacktrace
-      - cp -a /root/.gradle /drone/
