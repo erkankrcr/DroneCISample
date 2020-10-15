@@ -3,7 +3,7 @@ type: docker
 name: default
 
 steps:
-  - name: build-gradlew
+  - name: build-gradle
     image: deneme:v1
     commands:
       - ./gradlew test
